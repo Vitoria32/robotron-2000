@@ -52,18 +52,18 @@
                     <div class="peca">
                         <label for="" class="peca-titulo">Braços</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <buttom class="controle-ajuste" id="btnBracoMenos">-</buttom>
+                            <input type="text" class="controle-contador" id="txtBraco" value="00">
+                            <buttom class="controle-ajuste" id="btnBracoMais">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Blindagem</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <buttom class="controle-ajuste" id ="btnBlindagemMenos">-</buttom>
+                            <input type="text" class="controle-contador" id= "txtBlindagem" value="00">
+                            <buttom class="controle-ajuste"id= "btnBlindagemMais">+</buttom>
                         </div>
                     </div>
                     <hr class="linha">
@@ -99,4 +99,31 @@
         </section>
     </main>
 </body>
+<script>
+    const btnBracoMenos = document.getElementById("btnBracoMenos")
+    const btnBracoMais = document.getElementById("btnBracoMais")
+
+    btnBracoMais.addEventListener("click", aumenta)
+    btnBracoMenos.addEventListener("click", diminui)
+
+    function aumenta(){
+        const txtBraco = document.getElementById("txtBraco")
+        txtBraco.value = parseInt(txtBraco.value) + 1
+    }
+
+    function diminui(){
+        const txtBraco = document.getElementById("txtBraco")
+        txtBraco.value = parseInt(txtBraco.value) - 1
+    }
+    const btnBlindagemMenos = document.getElementById("btnBlinagemMenos")
+    const btnBlindagemMais = document.getElementById("btnBlinagemMais")
+
+    btnBlindagemMenos.addEventListener("click",diminui2)
+    btnBlindagemMais.addEventListener("click",aumenta2)
+
+    function diminui2(){
+        const  txtBlindagem= document.getElementById("txtBlindagem")
+        txtBlindagem.value= parseInt(txtBlindagem.value) -1
+    }
+</script>
 </html>
